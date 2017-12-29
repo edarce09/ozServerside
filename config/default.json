@@ -1,0 +1,20 @@
+{
+  // Customer module configs
+  // dev config
+  "config": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 5984,
+      "dbName": "customers"
+    },
+    "paths":{ 
+      "SERVERPATH":{"/home/kirsch/Repository/jsRepos/server/"},
+      "OZPATH":{"/home/kirsch/Repository/jsRepos/server/ozModules"}
+    },
+    "credit": {
+      "initialLimit": 100,
+      // Set low for development
+      "initialDays": 1
+    }
+  }
+}

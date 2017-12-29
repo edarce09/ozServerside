@@ -4,9 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+let connection = require('./mongooseSetUp');
+var index = require('./serverConfig/index');
+var users = require('./ozModules/mUsers/routes/users');
 
 var app = express();
 
@@ -42,5 +42,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+app.conection = connection;
 
 module.exports = app;
+
