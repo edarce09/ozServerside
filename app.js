@@ -22,6 +22,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Check headers config
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Acces-Control-Allow-Headers', 'X-Api-key, Origin, X-Requesed-With, Content-Type, Accept, Acces-Control-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS, POST, DELET');
+  res.header('Allow', 'GET, PUT, OPTIONS, POST, DELET');
+  next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 
