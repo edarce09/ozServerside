@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 let connection = require('./mongooseSetUp');
 var index = require('./serverConfig/index');
-var users = require('./ozModules/mUsers/routes/users');
+var users = require('./ozModules/mUrp/routes/users');
+let roles = require('./ozModules/mUrp/routes/roles');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/roles', roles);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
