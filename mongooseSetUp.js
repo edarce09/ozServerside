@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 var Schema = mongoose.Schema;
 
 db = mongoose.createConnection('mongodb://localhost:27017/cursomean', (err, res) =>{

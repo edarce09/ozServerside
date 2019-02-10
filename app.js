@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   res.header('Allow', 'GET, PUT, OPTIONS, POST, DELET');
   next();
 });
-
+app.listen(3000);
 app.use('/', index);
 app.use('/users', users);
 app.use('/roles', roles);
